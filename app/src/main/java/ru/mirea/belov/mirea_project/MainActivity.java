@@ -1,5 +1,6 @@
 package ru.mirea.belov.mirea_project;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send, R.id.nav_brouser, R.id.nav_calculator)
+                R.id.nav_tools, R.id.nav_player, R.id.nav_send, R.id.nav_brouser, R.id.nav_calculator)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -68,4 +69,12 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    public void onClickPlayMusic(View view) {
+        startService(
+                new Intent(MainActivity.this, PlayerService.class));
+    }
+    public void onClickStopMusic(View view) {
+        stopService(
+                new Intent(MainActivity.this, PlayerService.class));
+    }
 }
