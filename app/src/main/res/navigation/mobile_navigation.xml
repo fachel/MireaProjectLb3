@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="ru.mirea.belov.mirea_project.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
         android:id="@+id/nav_slideshow"
         android:name="ru.mirea.belov.mirea_project.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
@@ -30,19 +24,8 @@
         tools:layout="@layout/fragment_tools" />
 
     <fragment
-        android:id="@+id/nav_player"
-        android:name="ru.mirea.belov.mirea_project.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_mediaplayer" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="ru.mirea.belov.mirea_project.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
-    <fragment
         android:id="@+id/nav_brouser"
-        android:name="ru.mirea.belov.mirea_project.Browser"
+        android:name="ru.mirea.belov.mirea_project.fragment_browser"
         android:label="fragment_browser"
         tools:layout="@layout/fragment_browser" />
     <fragment
@@ -50,4 +33,19 @@
         android:name="ru.mirea.belov.mirea_project.fragment_calculator"
         android:label="calculator"
         tools:layout="@layout/fragment_calculator" />
+    <fragment
+        android:id="@+id/audioRecord"
+        android:name="ru.mirea.belov.mirea_project.fragment_audio_record"
+        android:label="fragment_audio_record"
+        tools:layout="@layout/fragment_audio_record" />
+    <fragment
+        android:id="@+id/fragment_photo"
+        android:name="ru.mirea.belov.mirea_project.fragment_photo"
+        android:label="fragment_photo"
+        tools:layout="@layout/fragment_photo" />
+    <fragment
+        android:id="@+id/fragment_sensors"
+        android:name="ru.mirea.belov.mirea_project.fragment_sensors"
+        android:label="fragment_sensors"
+        tools:layout="@layout/fragment_sensors" />
 </navigation>

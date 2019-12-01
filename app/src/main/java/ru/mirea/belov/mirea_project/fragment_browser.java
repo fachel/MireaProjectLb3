@@ -1,6 +1,5 @@
 package ru.mirea.belov.mirea_project;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -15,12 +14,12 @@ import android.webkit.WebView;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Browser.OnFragmentInteractionListener} interface
+ * {@link fragment_browser.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Browser#newInstance} factory method to
+ * Use the {@link fragment_browser#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Browser extends Fragment {
+public class fragment_browser extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +31,7 @@ public class Browser extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Browser() {
+    public fragment_browser() {
         // Required empty public constructor
     }
 
@@ -42,11 +41,11 @@ public class Browser extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Browser.
+     * @return A new instance of fragment fragment_browser.
      */
     // TODO: Rename and change types and number of parameters
-    public static Browser newInstance(String param1, String param2) {
-        Browser fragment = new Browser();
+    public static fragment_browser newInstance(String param1, String param2) {
+        fragment_browser fragment = new fragment_browser();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

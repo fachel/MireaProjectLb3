@@ -26,28 +26,44 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private  FloatingActionButton fab;
+    private static boolean isPlay = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // инициализация объекта MediaRecorder
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                if(!isPlay){
+                    Snackbar.make(view, "Playing....", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    startService(
+                            new Intent(MainActivity.this, PlayerService.class));
+                    isPlay = true;
+                }else {
+                    isPlay = false;
+                    Snackbar.make(view, "Stop....", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    fab.setImageResource(R.drawable.ic_music_pause);
+                    stopService(
+                            new Intent(MainActivity.this, PlayerService.class));
+                }
             }
+
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_player, R.id.nav_send, R.id.nav_brouser, R.id.nav_calculator)
+                R.id.nav_home, R.id.fragment_sensors, R.id.nav_slideshow,
+                R.id.nav_tools, R.id.nav_brouser, R.id.nav_calculator, R.id.audioRecord, R.id.fragment_photo)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

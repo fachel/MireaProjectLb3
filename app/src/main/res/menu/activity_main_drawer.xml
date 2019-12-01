@@ -9,10 +9,6 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
@@ -22,23 +18,28 @@
             android:title="@string/menu_tools" />
         <item
             android:id="@+id/nav_brouser"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Browser" />
+            android:icon="@drawable/ic_browser"
+            android:title="@string/menu_browser" />
+        <item
+            android:id="@+id/fragment_sensors"
+            android:icon="@drawable/ic_sensors"
+            android:title="@string/menu_sensors" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_player"
-                android:icon="@drawable/ic_menu_share"
-                android:title="MediaPlayer" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
-            <item
                 android:id="@+id/nav_calculator"
-                android:title="Calculator"/>
+                android:title="@string/menu_calculator"
+                android:icon="@drawable/ic_calculator"/>
+            <item
+                android:id="@+id/audioRecord"
+                android:title="@string/menu_audio_record"
+                android:icon="@drawable/ic_media_record"/>
+            <item
+                android:id="@+id/fragment_photo"
+                android:title="@string/menu_photo"
+                android:icon="@drawable/ic_photo"/>
         </menu>
     </item>
 
